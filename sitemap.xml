@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://zaun.kr/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://lh3.googleusercontent.com/d/1XW_e-2t-4qKz5VwP04T6h0sOqYqKzqA_</image:loc>
+      <image:title>건축사사무소자운경 포트폴리오 대표작</image:title>
+      <image:caption>자연과 도시, 건축의 경계를 담아내는 건축사사무소자운경</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://zaun.kr/#works</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zaun.kr/#about</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jayoon-zaun.github.io/zaun/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

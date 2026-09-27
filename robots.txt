@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Sitemap Index
+Sitemap: https://zaun.kr/sitemap.xml
+Sitemap: https://jayoon-zaun.github.io/zaun/sitemap.xml
