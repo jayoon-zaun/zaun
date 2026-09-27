@@ -1,0 +1,15 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+
+# AI Studio & Local Dev Configs (GitHub에는 순수 index.html, style.css, app.js만 업로드)
+package.json
+package-lock.json
+bun.lock
+metadata.json
+tsconfig.json
+vite.config.ts

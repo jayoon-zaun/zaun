@@ -1,0 +1,101 @@
+/* ==========================================================================
+   (주)건축사사무소자운경 | zaunkyeoung architects
+   Pure Standalone Stylesheet (No Build Required)
+   ========================================================================== */
+
+@charset "UTF-8";
+
+/* Base Resets & Typography */
+html {
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #1c1c1c;
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Font Classes */
+.font-serif {
+  font-family: 'Cormorant Garamond', 'Cinzel', 'Noto Serif KR', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Image Anti-Download & Anti-Drag Protection */
+img,
+.image-protected {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Clean Hairline Borders */
+.hairline-b {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.hairline-t {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Masonry Flex Container:
+   On mobile (<768px), columns dissolve so children flex-order 1..6 directly.
+   On desktop (>=768px), columns form a 2-column staggered masonry grid.
+*/
+.masonry-col {
+  display: contents;
+}
+
+@media (min-width: 768px) {
+  .masonry-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+  }
+  .masonry-col-right {
+    padding-top: 3rem; /* Staggered masonry offset */
+  }
+}
+
+/* Fade in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* Modal Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}

@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>건축사사무소자운경 | zaunkyeoung architect</title>
+    <meta name="description" content="자주빛 구름이 머무는 경계. 자연, 도시, 건축의 경계를 유연하게 이어가며 관계의 이야기를 풍부하게 담아냅니다. (주)건축사사무소자운경 포트폴리오." />
+    <meta property="og:title" content="건축사사무소자운경 | zaunkyeoung architect" />
+    <meta property="og:description" content="자주빛 구름이 머무는 경계. 자연, 도시, 건축의 경계를 유연하게 이어가며 관계의 이야기를 풍부하게 담아냅니다. (주)건축사사무소자운경 포트폴리오." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- CDN Preconnects -->
+    <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin />
+    <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
+    <link rel="preconnect" href="https://drive.google.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Italiana&family=JetBrains+Mono:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Pure Standalone Stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Tailwind CSS (Zero Build CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['Cormorant Garamond', 'Cinzel', 'Noto Serif KR', 'Georgia', 'serif'],
+              sans: ['Plus Jakarta Sans', 'Noto Sans KR', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="bg-white text-[#1c1c1c] antialiased selection:bg-neutral-900 selection:text-white min-h-screen flex flex-col justify-between">
+
+    <!-- 1. Header (Sticky Top Bar on Works View) -->
+    <header id="main-header" class="sticky top-0 z-40 w-full bg-white border-b border-black/[0.05] transition-colors">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 md:h-24 flex items-center justify-between">
+        <!-- Brand Wordmark -->
+        <div class="flex flex-col">
+          <button
+            onclick="switchTab('works')"
+            class="text-left font-sans font-light tracking-[0.24em] uppercase text-sm sm:text-base md:text-lg text-neutral-950 hover:text-neutral-600 transition-colors cursor-pointer select-none leading-none"
+          >
+            zaunkyeong architects
+          </button>
+          <span class="text-[10px] font-sans font-light text-neutral-400 tracking-[0.16em] uppercase mt-1.5">
+            건축사사무소자운경
+          </span>
+        </div>
+
+        <!-- Desktop Navigation: works & about -->
+        <nav class="hidden md:flex items-center gap-10 text-xs font-sans tracking-[0.2em] uppercase">
+          <button
+            onclick="switchTab('works')"
+            class="nav-works-btn py-1.5 transition-colors cursor-pointer text-neutral-950 font-medium border-b border-neutral-950"
+          >
+            works
+          </button>
+          <button
+            onclick="switchTab('about')"
+            class="nav-about-btn py-1.5 transition-colors cursor-pointer text-neutral-400 hover:text-neutral-900"
+          >
+            about
+          </button>
+        </nav>
+
+        <!-- Mobile Hamburger Button -->
+        <div class="flex md:hidden items-center">
+          <button
+            id="mobile-menu-btn"
+            aria-label="Toggle Navigation Menu"
+            class="p-2 text-neutral-800 hover:text-neutral-950 focus-visible:ring-1 focus-visible:ring-black rounded-xs cursor-pointer"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Drawer Menu -->
+      <div id="mobile-menu-drawer" class="hidden fixed inset-x-0 top-20 bottom-0 z-50 bg-white border-t border-black/[0.06] md:hidden flex flex-col justify-between p-8 animate-fade-in">
+        <div class="space-y-8 pt-6">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-[10px] text-neutral-400 tracking-[0.2em] uppercase block">
+              ZAUNKYEONG ARCHITECTS
+            </span>
+            <button id="mobile-menu-close-btn" class="p-1 text-neutral-500 hover:text-neutral-900 cursor-pointer">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="flex flex-col space-y-6">
+            <button
+              onclick="switchTab('works')"
+              class="text-left font-serif text-3xl text-neutral-950 font-medium"
+            >
+              works
+            </button>
+            <button
+              onclick="switchTab('about')"
+              class="text-left font-serif text-3xl text-neutral-400 hover:text-neutral-950 transition-colors"
+            >
+              about
+            </button>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-black/[0.06] text-xs font-sans text-neutral-400 space-y-1">
+          <p class="font-serif text-neutral-700">자운경紫雲境</p>
+          <p>서울시 서초구 언남5길 1, 2층</p>
+          <p class="font-mono text-[11px] text-neutral-400">info@zaun.kr</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. Main Content -->
+    <main class="flex-1 w-full">
+
+      <!-- View A: Works Gallery -->
+      <section id="works-view" class="relative w-full max-w-7xl mx-auto px-6 md:px-12 pt-8 md:pt-12 pb-24 md:pb-36">
+        <!-- 2-Column Responsive Masonry Gallery Wall on Desktop, Strict 01 -> 02 -> 03 -> 04 -> 05 -> 06 Sequence on Mobile -->
+        <div class="flex flex-col md:grid md:grid-cols-2 gap-x-10 md:gap-x-16 items-start">
+          <!-- Left Column (Desktop: 01, 03, 05) -->
+          <div id="gallery-left-col" class="masonry-col"></div>
+          <!-- Right Column (Desktop: 02, 04, 06 with staggered top offset) -->
+          <div id="gallery-right-col" class="masonry-col masonry-col-right"></div>
+        </div>
+      </section>
+
+      <!-- View B: About Page (Pure Typographic Architectural Portfolio) -->
+      <section id="about-view" class="hidden min-h-screen bg-white text-[#1c1c1c] font-sans animate-fade-in">
+        <div class="max-w-4xl mx-auto px-6 md:px-12 pt-28 md:pt-36 pb-32">
+          
+          <!-- 1. Philosophy Statement -->
+          <section class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 pb-20 md:pb-24 border-b border-black/[0.05]">
+            <div class="md:col-span-3">
+              <span class="font-sans text-[11px] font-normal tracking-[0.28em] uppercase text-neutral-400 block pt-1">
+                about
+              </span>
+            </div>
+            <div class="md:col-span-9">
+              <div class="font-sans text-[15px] sm:text-[16px] text-neutral-800 leading-[2] font-light space-y-4">
+                <p>
+                  자운경紫雲境은<br />
+                  자주빛 구름이 머무는 경계를 뜻합니다.
+                </p>
+                <p>
+                  우연히 마주한 아름다운 하늘처럼<br />
+                  일상에 깊은 영감을 주는 공간을 추구합니다.
+                </p>
+                <p>
+                  자연, 도시, 건축의 경계를 유연하게 이어가며,<br />
+                  관계의 이야기를 풍부하게 담아냅니다.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. Contact Section -->
+          <section class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-16 md:py-20 border-b border-black/[0.05]">
+            <div class="md:col-span-3">
+              <span class="font-sans text-[11px] font-normal tracking-[0.28em] uppercase text-neutral-400 block pt-0.5">
+                contact
+              </span>
+            </div>
+            <div class="md:col-span-9">
+              <div class="font-sans text-[14px] sm:text-[15px] text-neutral-800 leading-relaxed font-light">
+                <p>서울특별시 서초구 언남5길 1, 2층</p>
+                <p class="mt-1">(주)건축사사무소자운경</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Architects (윤진아 소장 & 나혜연 소장) -->
+          <section class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-16 md:py-20 border-b border-black/[0.05]">
+            <div class="md:col-span-3">
+              <span class="font-sans text-[11px] font-normal tracking-[0.28em] uppercase text-neutral-400 block pt-0.5">
+                architects
+              </span>
+            </div>
+            <div class="md:col-span-9">
+              <div class="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-14">
+                <!-- 윤진아 소장 -->
+                <div class="space-y-4 shrink-0">
+                  <div>
+                    <h3 class="font-sans text-[15px] text-neutral-950 font-medium tracking-tight">
+                      윤진아 <span class="text-xs text-neutral-400 font-light ml-1">소장 · 건축사</span>
+                    </h3>
+                  </div>
+
+                  <div class="space-y-2.5 font-sans text-xs sm:text-[13px] text-neutral-600 font-light leading-relaxed">
+                    <div class="flex items-center gap-3 sm:gap-4 whitespace-nowrap">
+                      <span class="font-sans text-neutral-400 font-normal w-[68px] shrink-0 tabular-nums">2005</span>
+                      <span class="text-neutral-700">홍익대학교 건축학과</span>
+                    </div>
+                    <div class="flex items-center gap-3 sm:gap-4 whitespace-nowrap">
+                      <span class="font-sans text-neutral-400 font-normal w-[68px] shrink-0 tabular-nums">2007</span>
+                      <span class="text-neutral-700">서울대학교 대학원 건축학과</span>
+                    </div>
+                    <div class="flex items-center gap-3 sm:gap-4 whitespace-nowrap">
+                      <span class="font-sans text-neutral-400 font-normal w-[68px] shrink-0 tabular-nums">2007-2011</span>
+                      <span class="text-neutral-700">(주)정림종합건축사사무소</span>
+                    </div>
+                    <div class="flex items-center gap-3 sm:gap-4 whitespace-nowrap">
+                      <span class="font-sans text-neutral-400 font-normal w-[68px] shrink-0 tabular-nums">2011-2013</span>
+                      <span class="text-neutral-700">(주)구가도시건축사사무소</span>
+                    </div>
+                    <div class="flex items-center gap-3 sm:gap-4 whitespace-nowrap">
+                      <span class="font-sans text-neutral-400 font-normal w-[68px] shrink-0 tabular-nums">2015-2025</span>
+                      <span class="text-neutral-700">건축사사무소자운</span>
+                    </div>
+                    <div class="flex items-center gap-3 sm:gap-4 whitespace-nowrap">
+                      <span class="font-sans text-neutral-400 font-normal w-[68px] shrink-0 tabular-nums">2025-</span>
+                      <span class="text-neutral-700">(주)건축사사무소자운경</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 나혜연 소장 -->
+                <div class="space-y-4 shrink-0">
+                  <div>
+                    <h3 class="font-sans text-[15px] text-neutral-950 font-medium tracking-tight">
+                      나혜연 <span class="text-xs text-neutral-400 font-light ml-1">소장 · 건축사</span>
+                    </h3>
+                  </div>
+
+                  <div class="space-y-2.5 font-sans text-xs sm:text-[13px] text-neutral-600 font-light leading-relaxed">
+                    <div class="flex items-center gap-3 sm:gap-4 whitespace-nowrap">
+                      <span class="font-sans text-neutral-400 font-normal w-[68px] shrink-0 tabular-nums">2008</span>
+                      <span class="text-neutral-700">국민대학교 건축학과</span>
+                    </div>
+                    <div class="flex items-center gap-3 sm:gap-4 whitespace-nowrap">
+                      <span class="font-sans text-neutral-400 font-normal w-[68px] shrink-0 tabular-nums">2024</span>
+                      <span class="text-neutral-700">성균관대학교 대학원 건축학과</span>
+                    </div>
+                    <div class="flex items-center gap-3 sm:gap-4 whitespace-nowrap">
+                      <span class="font-sans text-neutral-400 font-normal w-[68px] shrink-0 tabular-nums">2008-2018</span>
+                      <span class="text-neutral-700">(주)정림종합건축사사무소</span>
+                    </div>
+                    <div class="flex items-center gap-3 sm:gap-4 whitespace-nowrap">
+                      <span class="font-sans text-neutral-400 font-normal w-[68px] shrink-0 tabular-nums">2018-2024</span>
+                      <span class="text-neutral-700">(주)지에이건축사사무소</span>
+                    </div>
+                    <div class="flex items-center gap-3 sm:gap-4 whitespace-nowrap">
+                      <span class="font-sans text-neutral-400 font-normal w-[68px] shrink-0 tabular-nums">2023-</span>
+                      <span class="text-neutral-700">국민대학교 겸임교수</span>
+                    </div>
+                    <div class="flex items-center gap-3 sm:gap-4 whitespace-nowrap">
+                      <span class="font-sans text-neutral-400 font-normal w-[68px] shrink-0 tabular-nums">2025-</span>
+                      <span class="text-neutral-700">(주)건축사사무소자운경</span>
+                    </div>
+
+                    <div class="pt-3 mt-3 border-t border-black/[0.04] space-y-1 text-xs text-neutral-500">
+                      <p class="whitespace-nowrap">· 녹색건축인증전문가</p>
+                      <p class="whitespace-nowrap">· 도봉구 건축위원회 위원 | 노원구 건축위원회 위원</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. Bottom Return Link to Works & Copyright -->
+          <footer class="pt-24 text-center">
+            <div class="mb-12">
+              <button
+                onclick="switchTab('works')"
+                class="text-xs font-sans tracking-[0.24em] uppercase text-neutral-950 font-medium hover:text-neutral-500 transition-colors cursor-pointer py-1.5 border-b border-neutral-950"
+              >
+                works
+              </button>
+            </div>
+
+            <p class="font-sans text-[11px] text-neutral-400 tracking-wider">
+              © 2026 zaunkyeong architects. All rights reserved.
+            </p>
+          </footer>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 3. Footer (Works Gallery View) -->
+    <footer id="main-footer" class="w-full bg-white pt-24 pb-16 px-6 md:px-12 border-t border-black/[0.04]">
+      <div class="max-w-7xl mx-auto text-center">
+        <div class="mb-10 flex items-center justify-center gap-12 text-xs font-sans tracking-[0.24em] uppercase">
+          <button
+            onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+            class="text-neutral-950 font-medium border-b border-neutral-950 py-1 cursor-pointer"
+            title="맨 위로 (Scroll to top)"
+          >
+            works
+          </button>
+          <button
+            onclick="switchTab('about')"
+            class="text-neutral-400 hover:text-neutral-950 transition-colors cursor-pointer py-1"
+          >
+            about
+          </button>
+        </div>
+
+        <p class="font-sans text-[11px] text-neutral-400 tracking-wider">
+          © 2026 zaunkyeong architects. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- 4. Fullscreen Project Detail Monograph Modal -->
+    <div
+      id="project-modal"
+      role="dialog"
+      aria-modal="true"
+      class="hidden fixed inset-0 z-50 bg-white text-[#1c1c1c] overflow-y-auto custom-scrollbar animate-fade-in"
+    >
+      <!-- Top Sticky Navigation Bar -->
+      <div class="sticky top-0 z-30 w-full bg-white/95 backdrop-blur-md border-b border-black/[0.05]">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 md:h-24 flex items-center justify-between">
+          <button
+            onclick="closeProjectModal()"
+            class="font-sans font-light tracking-[0.24em] uppercase text-sm sm:text-base text-neutral-950 hover:text-neutral-600 transition-colors cursor-pointer select-none"
+          >
+            zaunkyeong architects
+          </button>
+
+          <div class="flex items-center gap-8">
+            <button
+              onclick="closeProjectModal(); switchTab('about');"
+              class="hidden sm:inline-block font-sans text-xs tracking-[0.2em] uppercase text-neutral-400 hover:text-neutral-900 transition-colors cursor-pointer py-1"
+            >
+              about
+            </button>
+
+            <!-- Close Button (X) -->
+            <button
+              onclick="closeProjectModal()"
+              aria-label="닫기 (Close)"
+              class="p-2 -mr-2 text-neutral-500 hover:text-neutral-950 transition-colors focus-visible:ring-1 focus-visible:ring-black rounded-xs cursor-pointer"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Content Body -->
+      <div id="modal-content-container" class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pb-24"></div>
+    </div>
+
+    <!-- Pure Standalone JavaScript -->
+    <script src="./app.js"></script>
+  </body>
+</html>
