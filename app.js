@@ -322,20 +322,20 @@
 
     modalContainerEl.innerHTML = `
       <!-- Minimal Project Title & Meta -->
-      <div class="pt-24 md:pt-36 pb-16 md:pb-24 px-6 text-center max-w-4xl mx-auto">
-        <h1 class="font-serif text-3xl sm:text-4xl md:text-6xl text-neutral-900 tracking-tight leading-tight">
+      <div class="pt-20 sm:pt-28 md:pt-36 pb-12 sm:pb-16 md:pb-20 px-6 text-center max-w-4xl mx-auto">
+        <h1 class="font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-neutral-900 tracking-tight leading-normal whitespace-nowrap overflow-visible py-1 px-2">
           ${project.titleKo}
         </h1>
-        <p class="font-sans text-xs sm:text-sm tracking-[0.18em] uppercase text-neutral-400 mt-3 font-light">
+        <p class="font-sans text-[11px] sm:text-xs md:text-sm tracking-[0.14em] sm:tracking-[0.18em] uppercase text-neutral-400 mt-2 sm:mt-2.5 font-light whitespace-nowrap overflow-visible py-0.5 px-2">
           ${project.titleEn}
         </p>
-        <p class="font-sans text-xs sm:text-sm text-neutral-500 tracking-wider mt-4 font-light tabular-nums">
+        <p class="font-sans text-xs sm:text-sm text-neutral-500 tracking-wider mt-3 sm:mt-3.5 font-light tabular-nums whitespace-nowrap overflow-visible py-0.5 px-2">
           ${project.locationKo} · ${project.projectTypeKo} · ${project.year}
         </p>
       </div>
 
-      <!-- Pure Architectural Monograph Gallery -->
-      <div class="w-full space-y-12 md:space-y-24 select-none">
+      <!-- Pure Architectural Monograph Gallery (Fullscreen Edge-to-Edge) -->
+      <div class="w-full space-y-8 sm:space-y-16 md:space-y-24 select-none">
         ${project.images
           .map(
             (imgSrc, idx) => `
@@ -345,7 +345,7 @@
               alt="${project.titleKo} - 0${idx + 1}"
               loading="${idx < 2 ? 'eager' : 'lazy'}"
               draggable="false"
-              class="w-full max-w-[1920px] h-auto object-cover object-center filter brightness-[0.98] select-none pointer-events-none"
+              class="w-full h-auto object-cover object-center filter brightness-[0.98] select-none pointer-events-none"
             />
             <!-- Transparent Shield: Protects image against drag and saving -->
             <div class="absolute inset-0 z-10 select-none"></div>
@@ -355,13 +355,13 @@
           .join('')}
       </div>
 
-      <!-- Bottom Close / Return Button -->
+      <!-- Bottom Home / Return Button -->
       <div class="py-24 text-center">
         <button
           onclick="closeProjectModal()"
           class="font-sans text-xs tracking-[0.24em] uppercase text-neutral-950 font-medium hover:text-neutral-500 transition-colors py-2 px-4 border-b border-neutral-950 cursor-pointer"
         >
-          close
+          home
         </button>
       </div>
     `;

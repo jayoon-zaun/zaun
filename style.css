@@ -25,7 +25,9 @@ body {
 
 /* Custom Font Classes */
 .font-serif {
-  font-family: 'Cormorant Garamond', 'Cinzel', 'Noto Serif KR', Georgia, serif;
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', 'Cinzel', Georgia, serif;
+  font-variant-numeric: normal;
+  font-feature-settings: normal;
 }
 
 .font-sans {
