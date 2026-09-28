@@ -153,6 +153,27 @@
         getDriveImageUrl('1RGP6yqnWa5xzzbnBT_BRgL4-6fSL7oPi'),
       ],
     },
+    {
+      id: 'yongin-single-family-house',
+      number: '07',
+      titleKo: '용인단독주택',
+      titleEn: 'Yongin Single Family House',
+      locationKo: '용인시 기흥구',
+      locationEn: 'Giheung-gu, Yongin-si',
+      projectTypeKo: '신축프로젝트',
+      projectTypeEn: 'New Construction',
+      year: '2016',
+      aspectRatio: '2500 / 1667',
+      heroImage: getDriveImageUrl('17lq4g16_30PY4DzuYAZpJLmb9uBUZZXd'),
+      images: [
+        getDriveImageUrl('17lq4g16_30PY4DzuYAZpJLmb9uBUZZXd'),
+        getDriveImageUrl('1fTvQkxQkVQ9ITsBmTH8kEkLBqMU7jOdQ'),
+        getDriveImageUrl('15ZYAE9S4-GMoDs6P77fQfDlOGDYBKWFv'),
+        getDriveImageUrl('1mldJC-kCej2Mhs_xRJMaruWpraNRWAdr'),
+        getDriveImageUrl('1_Y5-rFhnytvhA-U4jzMZFjdBqEHPudvJ'),
+        getDriveImageUrl('1qR5D6o7zhtRe7uVtj3xfFMlvuuj2tWVq'),
+      ],
+    },
   ];
 
   // State
@@ -243,9 +264,11 @@
     leftColEl.innerHTML = '';
     rightColEl.innerHTML = '';
 
-    // Distribute into 2 columns for desktop masonry
-    const leftProjects = [PROJECTS[0], PROJECTS[2], PROJECTS[4]];
-    const rightProjects = [PROJECTS[1], PROJECTS[3], PROJECTS[5]];
+    // Distribute into 2 columns:
+    // Left column: 01, 03, 05 (동탄상가주택), 07 (용인단독주택) -> 동탄상가주택 바로 아래에 용인단독주택 위치
+    // Right column: 02, 04, 06 (흥업면행정복지센터)
+    const leftProjects = PROJECTS.filter((_, idx) => idx % 2 === 0);
+    const rightProjects = PROJECTS.filter((_, idx) => idx % 2 === 1);
 
     function createCard(project, projectIndex) {
       const card = document.createElement('div');
